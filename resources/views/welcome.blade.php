@@ -20,18 +20,35 @@
 
             <div >
                 <div >
-                   <h2>3W Academy</h2> 
-               
+                   <h2>List  Meals</h2> 
                 </div>
+               <div class="album py-5 bg-light">
+    <div class="container">
 
-                <ul >
-                <?php //foreach($categories as $categorie) : ?>
-                  @foreach ($categories as $categorie)
-                        <li> {{    $categorie -> category   }} </li>
-                  @endforeach
-                  <?php //endforeach ?>
-                 </ul>
+      <div class="row">
+          @foreach ($meals as $meal)
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{ $meal->photo }}" alt="">
+
+              <div class="card-body">
+                  <h3>{{ $meal->name }}</h3>
+                <p class="card-text">{{ $meal->description }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Show details</button>
+                  </div>
+                  <small class="text-muted">{{ $meal->sell_price }} €</small>
+                </div>
+              </div>
             </div>
+          </div>
+          @endforeach
+      </div>
+
+            </div>
+            {{ $meals->links() }}
         </div>
     </div>
     @endsection

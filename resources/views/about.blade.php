@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
         <div>
             {{-- @if (Route::has('login'))
                 <div class="top-right links">
@@ -24,5 +24,5 @@
                 </div>
             </div>
         </div>
-    </div>
+  
     @endsection

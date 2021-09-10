@@ -15,13 +15,13 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
 
-            $table->bigIncrements(' id ');
+            $table->bigIncrements('id');
             $table->timestamps();
-            $table->date(' booking_date ');
-            $table->time(' booking_time ');
-            $table->tinyInteger(' number_of_seats ')->unsigned();
-            $table->unsignedBigInteger(' user_id ');
-            $table->foreign(' user_id ')->references(' id ')->on(' users ')->onDelete(' cascade ')->onUpdate(' cascade ');
+            $table->date('booking_date');
+            $table->time('booking_time');
+            $table->tinyInteger('number_of_seats')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

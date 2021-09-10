@@ -14,14 +14,14 @@ class CreateMealsTable extends Migration
     public function up()
     {
         Schema::create('meals', function (Blueprint $table) {
-            $table->bigIncrements(' id ');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('photo');
+            $table->text('description');
+            $table->unsignedInteger('stock_quantity');
+            $table->double('buy_price',  8,  3 )->unsigned();
+            $table->double('sale_price',  8,  3 )->unsigned();
             $table->timestamps();
-            $table->string(' name ');
-            $table->string(' photo ');
-            $table->text(' description ');
-            $table->unsignedInteger(' quantity_instock ');
-            $table->double(' buy_price ',8,3 )->unsigned();
-            $table->double(' sale_price ', 8, 3 )->unsigned();
         });
     }
 

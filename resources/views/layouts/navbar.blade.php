@@ -11,6 +11,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+               @auth
+               <li class="nav-item">
+                    {{-- <a href="/bookings" class="nav-link">Booking</a> --}}
+                    {{-- <a href="{{ url('/bookings') }}" class="nav-link">Bookings</a> --}}
+                    {{-- <a href="{{ action('BookingController@index') }}" class="nav-link">Bookings</a> --}}
+                    <a href="{{ route('bookings.index') }}" class="nav-link">Bookings</a>
+                </li>
+               @endauth
             <li class="nav-item">
                 <a href="/about" class="nav-link">About</a>
             </li>

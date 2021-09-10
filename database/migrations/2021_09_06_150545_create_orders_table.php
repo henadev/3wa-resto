@@ -14,14 +14,14 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements(' id ');
-            $table->double(' total_amount ' , 8, 2);
-            $table->double(' tax_rate' , 5, 3)->default(20);
-            $table->double(' tax_amount ' , 8, 2);
-            $table->unsignedBigInteger(' user_id ');
-            $table->timestamps(' time_complete ')->nullable();
+            $table->bigIncrements('id');
+            $table->double('total_amount' ,  8,  3);
+            $table->double('tax_rate' ,  5,  3)->default(20);
+            $table->double('tax_amount' ,  8,  3);
+            $table->unsignedBigInteger('user_id');
+            $table->timestamp('complete_time')->nullable();
             $table->timestamps();
-            $table->foreign(' user_id ')->references(' id ')->on(' users ')->onDelete(' cascade ')->onUpdate(' cascade ');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             
         });
     }
